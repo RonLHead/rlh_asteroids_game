@@ -14,12 +14,14 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     Player.containers = (updatable, drawable)
+    player_obj = Player(x = SCREEN_WIDTH / 2, y = SCREEN_HEIGHT / 2)
 
     while screen:
         log_state()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+           
         screen.fill("black")
         for draw in drawable:
             draw.draw(screen)
